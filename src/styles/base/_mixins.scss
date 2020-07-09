@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  # Transitions
+\*------------------------------------*/
+@mixin transition($properties...) {
+    @if length($properties) >= 1 {
+        transition: $properties;
+    }
+    @else {
+        transition: all 0.2s ease-in-out 0s;
+    }
+}
+
+@mixin containBg() {
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin scrollhide() {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

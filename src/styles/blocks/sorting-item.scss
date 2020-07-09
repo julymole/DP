@@ -1,0 +1,10 @@
+.sorting-item {
+    display: flex;
+    align-items: center;
+
+    &__title {
+        margin-right: 4px;
+        font-size: rem(14);
+        color: $typography-secondary-color;
+    }
+}

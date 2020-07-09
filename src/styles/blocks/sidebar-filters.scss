@@ -1,0 +1,54 @@
+.sidebar-filters {
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__accordion-btn {
+        @include transition();
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: none;
+        padding: 20px 24px;
+        font-size: 2rem;
+        line-height: 1.5;
+        font-weight: 700;
+        color: $typography-primary-color;
+        background: $white-color;
+        cursor: pointer;
+        &.active {
+            color: $function-primary-color;
+            .icon {
+                transform: rotate(180deg);
+                color: $function-primary-color;
+            }
+        }
+        .icon {
+            @include transition();
+        }
+    }
+
+    &__content {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 24px;
+
+        .field-check {
+            margin-top: 24px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

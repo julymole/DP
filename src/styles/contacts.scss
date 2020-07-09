@@ -1,0 +1,228 @@
+@import "base/variables";
+@import "base/functions";
+@import "base/mixins";
+@import "base/sprite";
+@import "base/_grid";
+
+@import "sections/feedback";
+
+.contacts {
+    padding-bottom: rem(80);
+    background-color: $theme-gray-color;
+    &__place {
+        @include col(3);
+        @include offset-col(1);
+        margin-bottom: rem(64);
+        .city {
+            display: block;
+            margin-bottom: rem(30);
+            font-weight: $font-weight--700;
+            font-size: rem(24);
+            line-height: rem(36);
+            color: $function-primary-color;
+        }
+        &--item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: rem(30);
+            .title {
+                margin-bottom: 8px;
+                font-size: rem(16);
+                line-height: rem(24);
+                color: $typography-secondary-color;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                @include transition();
+                font-weight: $font-weight--700;
+                font-size: rem(20);
+                line-height: rem(28);
+                color: $typography-primary-color;
+                text-decoration: none;
+                &:hover {
+                    color: $function-primary-color;
+                }
+            }
+            address {
+                font-weight: $font-weight--500;
+                font-size: rem(18);
+                line-height: rem(26);
+                color: $typography-primary-color;
+                font-style: unset;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__map {
+        @include col(10);
+        @include offset-col(1);
+        height: 456px;
+        margin-bottom: rem(84);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__requisites {
+        @include col(10);
+        @include offset-col(1);
+        margin-bottom: rem(64);
+        &--header {
+            display: block;
+            margin-bottom: rem(48);
+            font-weight: $font-weight--700;
+            font-size: rem(28);
+            line-height: rem(42);
+            color: $typography-primary-color;
+        }
+        &--item {
+            display: flex;
+            margin-bottom: rem(32);
+            .title {
+                width: 20%;
+                font-size: rem(18);
+                line-height: rem(26);
+                color: $typography-secondary-color;
+            }
+            .text {
+                font-weight: $font-weight--500;
+                font-size: rem(18);
+                line-height: rem(26);
+                color: $typography-primary-color;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &--link {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            min-height: 64px;
+            margin-top: rem(38);
+            margin-right: rem(250);
+            padding-left: 96px;
+            text-decoration: none;
+            &:hover {
+                .icon {
+                    background-color: darken($function-primary-color, 10%);
+                }
+                .title {
+                    color: $function-primary-color;
+                }
+            }
+            .icon {
+                @include transition();
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 64px;
+                height: 64px;
+                margin-right: 32px;
+                border-radius: 50%;
+                background-color: $function-primary-color;
+                background-size: 20px 20px;
+            }
+            .title {
+                @include transition();
+                margin-bottom: 4px;
+                font-size: rem(16);
+                line-height: rem(24);
+                color: $typography-secondary-color;
+                text-decoration: none;
+            }
+            .download {
+                font-weight: $font-weight--700;
+                font-size: rem(18);
+                line-height: rem(26);
+                color: $function-primary-color;
+                text-decoration: none;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__person {
+        @include col(10);
+        @include offset-col(1);
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: rem(64);
+        padding-bottom: rem(64);
+        border: 1px solid $border-color;
+        border-width: 1px 0 1px 0;
+        &--item {
+            display: flex;
+            flex-direction: column;
+            width: percentage(240 / 1300);
+            margin-right: percentage(240 / 1300);
+            .row {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 40px;
+                color: $typography-primary-color;
+                .title {
+                    margin-bottom: 4px;
+                    font-size: rem(16);
+                    line-height: rem(24);
+                    color: $typography-secondary-color;
+                }
+                .text {
+                    font-weight: $font-weight--700;
+                    font-size: rem(20);
+                    line-height: rem(28);
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                a {
+                    @include transition();
+                    color: $typography-primary-color;
+                    text-decoration: none;
+                    &:hover {
+                        color: $function-primary-color;
+                    }
+                    &[href^="mailto:"] {
+                        color: $function-primary-color;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &--wrapper {
+        .inner {
+            @include row();
+        }
+        .feedback {
+            @include col(10);
+            @include offset-col(1)
+		;
+        }
+    }
+    h1 {
+        @include col(12);
+        @include offset-col(1);
+        margin-bottom: rem(64);
+        font-size: rem(48);
+        line-height: rem(72);
+        color: $typography-primary-color;
+    }
+}

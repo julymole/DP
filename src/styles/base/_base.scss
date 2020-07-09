@@ -1,0 +1,77 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: $font-size--root;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $white-color;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-smoothing: antialiased;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    color: $typography-primary-color;
+    scroll-behavior: smooth;
+}
+
+input[type="text"], input[type="email"], input[type="search"], input[type="password"], select, button, [type="button"], [type="reset"], [type="submit"] {
+    appearance: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    &__content {
+        flex: 1 0 auto;
+        position: relative;
+    }
+}
+
+.content-grid {
+    position: relative;
+    &::before {
+
+        --grid-color: rgba(255, 0, 0, .1);
+        --grid-sides: 0;
+        --grid-gutter: 32px;
+        --grid-columns: 12;
+        --grid-column-width: calc((100% - var(--grid-gutter) * var(--grid-columns)) / var(--grid-columns));
+        content: "";
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width: map_get($wrapper, content-size);
+        margin: auto;
+        pointer-events: none;
+
+        background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(var(--grid-gutter) / 2), var(--grid-color) calc(var(--grid-gutter) / 2), var(--grid-color) calc(var(--grid-column-width) + var(--grid-gutter) / 2), transparent calc(var(--grid-column-width) + var(--grid-gutter) / 2), transparent calc(var(--grid-column-width) + var(--grid-gutter)));
+
+        background-repeat: no-repeat;
+    }
+}

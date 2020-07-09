@@ -1,0 +1,15 @@
+{% extends './layout.html' %}
+{% set nameCss= "main" %}
+{% block content %}
+    <h1>New Page</h1>
+<a href="#none" data-modal>открыть модалку</a>
+
+<picture>
+    <source srcset="img/logo.webp" type="image/webp">
+    <img src="img/logo.png" alt="">
+</picture>
+{% endblock %}
+
+{% block scripts %}
+<script src="js/main.js"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+@import "base/variables";
+@import "base/functions";
+@import "base/mixins";
+@import "base/sprite";
+@import "base/_grid";
+
+@import "blocks/sidebar-category-list";
+@import "blocks/sidebar-filters";
+
+.catalog {
+    @include row();
+    align-items: flex-start;
+    justify-content: space-between;
+
+
+    .sorting-item {
+        .select-container {
+            width: 240px;
+        }
+    }
+}

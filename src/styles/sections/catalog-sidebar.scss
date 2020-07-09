@@ -1,0 +1,7 @@
+.catalog-sidebar {
+    @include col(3);
+    &__inner {
+        border: 1px solid $border-color;
+        background: $white-color;
+    }
+}
