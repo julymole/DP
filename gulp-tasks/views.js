@@ -23,7 +23,7 @@ gulp.task("views", () => {
     return gulp.src('./src/templates/pages/*.html')
         .pipe(data(getData))
         .pipe(nunjucks({
-            path: ['./src/templates','./src/blocks/modules']
+            path: ['./src/templates']
         }))
         .pipe(prettify({
             indent_inner_html: false,

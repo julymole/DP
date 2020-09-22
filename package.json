@@ -87,12 +87,13 @@
         "webpack": "^4.43.0",
         "webpack-stream": "^5.2.1",
         "yargs": "^15.4.0",
-		"autoprefixer": "^9.8.4"
-	},
+        "autoprefixer": "^9.8.4"
+    },
     "dependencies": {
         "jquery": "^3.5.1",
         "js-cookie": "^2.2.1",
         "magnific-popup": "^1.1.0",
+        "pnpm": "^5.7.0",
         "swiper": "^5.4.5"
     }
 }

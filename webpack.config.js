@@ -1,46 +1,55 @@
 const path = require("path");
-const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-    entry: {
-        main: "./src/js/index.js",
-    },
+	plugins: [
+		new webpack.ProvidePlugin({
+			"jQuery": "jquery",
+			"window.jQuery": "jquery",
+			"jquery": "jquery",
+			"window.jquery": "jquery",
+			"$": "jquery",
+			"window.$": "jquery"
+		})
+	],
 
-    output: {
-        filename: "[name].bundle.js",
-        chunkFilename: "[name].bundle.js",
-        publicPath: "/"
-    },
+	entry: {
+		main: "./src/js/index.js",
+	},
 
-    optimization: {
-        minimizer: [
-            new TerserPlugin({
-                sourceMap: true,
-                extractComments: false,
-            }),
-        ],
-    },
+	output: {
+		filename: "[name].js",
+		chunkFilename: "[name].js",
+		publicPath: "/"
+	},
 
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                include: path.resolve(__dirname, 'src/js'),
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            },
-        ]
-    },
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					test: /node_modules/,
+					chunks: "initial",
+					name: "vendor",
+					enforce: true
+				}
+			}
+		}
+	},
 
-    resolve: {
-        alias: {
-            "%modules%": path.resolve(__dirname, "src/blocks/modules")
-        }
-    },
-    plugins: []
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: require.resolve("babel-loader"),
+					query: {
+						presets: [
+							["@babel/preset-env", { modules: false }]
+						]
+					}
+				}
+			}
+		]
+	},
 };

@@ -34,7 +34,6 @@ webpack-gulp-template
 │   ├── templates
 │   └── .htaccess
 ├── .babelrc.js
-├── .bemrc.js
 ├── .editorconfig
 ├── .eslintrc.json
 ├── .gitignore
@@ -50,7 +49,6 @@ webpack-gulp-template
 * Корень папки:
     * ```.editorconfig``` — настройки для редакторов кода
     * ```.babelrc.js``` — настройки Babel
-    * ```.bemrc.js``` — настройки БЭМ
     * ```.eslintrc.json``` — настройки ESLint
     * ```.gitignore``` – запрет на отслеживание файлов Git'ом
     * ```.stylelintrc``` — настройки Stylelint

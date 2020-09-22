@@ -7,11 +7,9 @@ const requireDir = require("require-dir"),
         views: {
             src: [
                 "./src/templates/",
-                "./src/blocks"
             ],
             build: "./build/",
             watch: [
-                "./src/blocks/**/*.html",
                 "./src/templates/**/*.html"
             ]
         },
@@ -19,7 +17,6 @@ const requireDir = require("require-dir"),
             src: "./src/styles/*.scss",
             build: "./build/styles/",
             watch: [
-                "./src/blocks/**/*.scss",
                 "./src/styles/**/*.scss"
             ]
         },
@@ -27,7 +24,6 @@ const requireDir = require("require-dir"),
             src: "./src/js/index.js",
             build: "./build/js/",
             watch: [
-                "./src/blocks/**/*.js",
                 "./src/js/**/*.js"
             ]
         },
