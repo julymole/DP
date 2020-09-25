@@ -191,7 +191,7 @@
             "message": "Каждое свойство должно заканчиваться точкой с запятой"
         }],
         "declaration-block-semicolon-newline-before": ["never-multi-line", {
-            "message": "Перенос перед символом ; недопусти
+            "message": "Перенос перед символом ; недопусти"
         }],
         "declaration-block-semicolon-space-before": ["never", {
             "message": "Пробел перед символом ; недопустим"

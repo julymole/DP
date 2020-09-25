@@ -1,5 +1,5 @@
 {
-    "name": "CoffeeStudio",
+    "name": "d-event",
     "version": "2.0.0",
     "description": "Coffee Gulp Templates",
     "main": "gulpfile.babel.js",
@@ -7,7 +7,7 @@
     "license": "",
     "repository": {
         "type": "git",
-        "url": "http://srv-gitlab.coffeestudio.ru/dev-front/coffee-gulp-templates"
+        "url": "http://srv-gitlab.coffeestudio.ru/d-event/d-event-html"
     },
     "scripts": {
         "dev": "gulp",
@@ -20,8 +20,8 @@
         "build sprites": "gulp sprites --production",
         "build fonts": "gulp fonts --production",
         "build favicons": "gulp favicons --production",
-        "lint:style": "stylelint \"src/**/*.scss\" --syntax=scss",
-        "lint:style --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix"
+        "lint:style": "stylelint \"src/styles/**/*.scss\" --syntax=scss",
+        "lint:style --fix": "stylelint \"src/styles/**/*.scss\" --syntax=scss --fix"
     },
     "browserslist": [
         "and_chr 75",
@@ -44,8 +44,6 @@
         "@babel/register": "^7.10.4",
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",
-        "bem-tools-core": "github:bem-tools/bem-tools-core",
-        "bem-tools-create": "github:bem-tools/bem-tools-create",
         "browser-sync": "^2.26.7",
         "del": "^5.1.0",
         "fs": "0.0.1-security",
@@ -93,7 +91,6 @@
         "jquery": "^3.5.1",
         "js-cookie": "^2.2.1",
         "magnific-popup": "^1.1.0",
-        "pnpm": "^5.7.0",
         "swiper": "^5.4.5"
     }
 }

@@ -1,26 +1,32 @@
 $white-color: #ffffff;
 //цвета текста
 $typography-primary-color: #333333;
-$typography-secondary-color:  #858585;
-$typography-text-color: #000000;
+$typography-secondary-color:  #adadad;
+$typography-text-color: $typography-primary-color;
+$typography-light-white: rgba(255, 255, 255, 0.2);
 
 //функциональный цвета
-$function-primary-color : #7555b2;
-$function-primary-color--opacity : rgba(68, 81, 199, 0.1);
+$function-primary-color : #e49566;
+$function-primary-color--hover : lighten($function-primary-color, 5%);
+$function-primary-color--active : darken($function-primary-color, 5%);
 $function-secondary-color : #ff6868;
-$function-link-color : rgba(117, 85, 178, 0.8);
+$function-link-color : $function-primary-color;
 $function-hover-color: rgba(153, 162, 249, 0.7);
 $function-success-color : #34cd67;
 $function-warning-color : #ffda79;
-$function-error-color : #ff6868;
+$function-error-color : #eb5757;
 
 //цвета темы
-$theme-primary-color: rgba(117, 85, 178, 0.1);
-$theme-secondary-color: rgba(255, 104, 104, 0.1);
+$theme-primary-color: #e49566;
+$theme-light-color: #e7a882;
+$theme-secondary-color: #e7a882;
 $theme-gray-color: #fafafa;
+$bg-primary: #202020;
+$bg-secondary: #292929;
+$theme-border-color: #e9e9e9;
 
 //остальные цвета
-$border-color: rgba(133, 133, 133, 0.4);
+$border-color: #e9e9e9;
 $disabled-color: rgba(206, 206, 206, 0.2);
 $hover-shadow-color: #99a2f9;
 $table-border-color: #cdcdcd;
@@ -36,11 +42,11 @@ $font-size--root:             8px;
 $font-size:                   rem(16); // rem(16px)
 $font-size--small:            80%;
 
-$font-path:                   "../fonts";
+$font-path:                   '../fonts';
 
-$font-family:                 "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family--monospace:      SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family--icon:           "icomoon";
+$font-family:                'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family--monospace:      SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family--icon:           'icomoon';
 
 $font-weight--100:            100;
 $font-weight--200:            200;
@@ -60,89 +66,46 @@ $letter-spacing:              normal;
 // Ширины
 
 $h1: (
-    "font-size": rem(64),
-    "line-height": 1.2,
-    "letter-spacing": 0
+    'font-size': rem(64),
+    'line-height': 1.2,
+    'letter-spacing': 0
 );
 $h2: (
-    "font-size": rem(56),
-    "line-height": 1.2,
-    "letter-spacing": 0
+    'font-size': rem(52),
+    'line-height': 1.375,
+    'letter-spacing': 0.01em
 );
+
 $h3: (
-    "font-size": rem(48),
-    "line-height": 1.2,
-    "letter-spacing": 0
+    'font-size': rem(48),
+    'line-height': 1.2,
+    'letter-spacing': 0
 );
 $h4: (
-    "font-size": rem(40),
-    "line-height": 1.2,
-    "letter-spacing": 0
+    'font-size': rem(40),
+    'line-height': 1.2,
+    'letter-spacing': 0
 );
 $h5: (
-    "font-size": rem(32),
-    "line-height": 1.5,
-    "letter-spacing": 0
+    'font-size': rem(32),
+    'line-height': 1.5,
+    'letter-spacing': 0
 );
 $h6: (
-    "font-size": rem(28),
-    "line-height": 1.5,
-    "letter-spacing": 0
+    'font-size': rem(28),
+    'line-height': 1.5,
+    'letter-spacing': 0
 );
 
 //грид
-$content-size: 1632px;
+$content-size: 1640px;
 $content-size--min: 280px;
-$padding-size: 16px;
+$padding-size: 20px;
 $col-count: 12;
 $wrapper: (
-    "content-size":$content-size ,
-    "content-size--min":$content-size--min,
-    "padding-size": $padding-size,
-    "col-count": $col-count
+    'content-size':$content-size,
+    'content-size--min':$content-size--min,
+    'padding-size': $padding-size,
+    'col-count': $col-count
 );
 $grid-color: rgba(255, 0, 0, .1);
-
-//Иконочные шрифты
-$icomoon-font-family: "icomoon";
-$icon__arrow-down-small: "\1f32b";
-$icon__arrow-left: "\e901";
-$icon__arrow-right: "\e902";
-$icon__arrow-up: "\e903";
-$icon__avatar: "\e904";
-$icon__call-stroke-light: "\e905";
-$icon__mail-fill: "\e906";
-$icon__facebook-stroke: "\e907";
-$icon__facebook-fill: "\e908";
-$icon__arrow-right-small: "\e909";
-$icon__options: "\e90a";
-$icon__close: "\e90b";
-$icon__like: "\e90c";
-$icon__arrow-left-small: "\e90d";
-$icon__arrow-down-small-small: "\e90e";
-$icon__arrow-top-small: "\e90f";
-$icon__instagram-stroke-light: "\e910";
-$icon__instagram-stroke-bold: "\e911";
-$icon__log-in: "\e912";
-$icon__mail-stroke: "\e913";
-$icon__map-pin-stroke: "\e914";
-$icon__odnoklassniki-stroke-light: "\e915";
-$icon__odnoklassniki-stroke-bold: "\e916";
-$icon__burger: "\e917";
-$icon__call-stroke-bold: "\e918";
-$icon__map-pin-fill: "\e919";
-$icon__search-bold: "\e91a";
-$icon__search-light: "\e91b";
-$icon__basket-stroke: "\e91c";
-$icon__basket-fill: "\e91d";
-$icon__telegram-stroke: "\e91e";
-$icon__telegram-fill: "\e91f";
-$icon__user: "\e920";
-$icon__viber-stroke: "\e921";
-$icon__viber-fill: "\e922";
-$icon__vk-stroke: "\e923";
-$icon__vk-fill: "\e924";
-$icon__whatsapp-stroke: "\e925";
-$icon__whatsapp-fill: "\e926";
-$icon__youtube-stroke: "\e927";
-$icon__youtube-fill: "\e928";

@@ -1,15 +1,14 @@
 {% extends './layout.html' %}
 {% set nameCss= "index" %}
 {% block content %}
-    <h1>New Page</h1>
-<a href="#none" data-modal>открыть модалку</a>
+<main>
+	<div class="wrapper">
+		<h1>hello world</h1>
+	</div>
+</main>
 
-<picture>
-    <source srcset="img/logo.webp" type="image/webp">
-    <img src="img/logo.png" alt="">
-</picture>
 {% endblock %}
-
+<!--подключение скриптов-->
 {% block scripts %}
-<script src="js/main.js"></script>
+<script src="js/index.js"></script>
 {% endblock %}

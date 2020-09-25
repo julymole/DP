@@ -1,7 +1,6 @@
 # webpack-gulp-template
 ## Особенности
 * именование классов по [БЭМ](https://ru.bem.info/)
-* используется БЭМ-структура
 * используется препроцессор [SCSS](https://sass-lang.com/)
 * используется транспайлер [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
 * используется [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
@@ -9,13 +8,12 @@
 
 ## Установка
 * установите [NodeJS](https://nodejs.org/en/) (если требуется)
-* скачайте сборку с помощью [Git](https://git-scm.com/downloads): ```git clone http://srv-gitlab.coffeestudio.ru/dev-front/webpack-gulp-template.git```
 * установите ```pnpm``` глобально: ```npm i -g pnpm```
 * установите ```gulp``` глобально: ```pnpm i gulp-cli -g```
 * перейдите в скачанную папку со сборкой: ```cd webpack-gulp-template```
 * скачайте необходимые зависимости: ```pnpm i```
-* чтобы начать работу, введите команду: ```pnpm run dev``` (режим разработки)
-* чтобы собрать проект, введите команду ```pnpm run build``` (режим сборки)
+* чтобы начать работу, введите команду: ```npm run dev``` (режим разработки)
+* чтобы собрать проект, введите команду ```npm run build``` (режим сборки)
 
 Если вы всё сделали правильно, у вас должен открыться браузер с локальным сервером. Режим сборки предполагает оптимизацию проекта: сжатие изображений, минифицирование CSS и JS-файлов для загрузки на сервер.
 
@@ -26,13 +24,12 @@ webpack-gulp-template
 ├── build
 ├── gulp-tasks
 ├── src
-│   ├── blocks
 │   ├── fonts
 │   ├── img
 │   ├── js
+|   ├── static
 │   ├── styles
-│   ├── templates
-│   └── .htaccess
+│   └── templates
 ├── .babelrc.js
 ├── .editorconfig
 ├── .eslintrc.json
@@ -51,59 +48,40 @@ webpack-gulp-template
     * ```.babelrc.js``` — настройки Babel
     * ```.eslintrc.json``` — настройки ESLint
     * ```.gitignore``` – запрет на отслеживание файлов Git'ом
+    * ```global.json``` — переменные для полноценной работы с nunjucks
+    * ```.gitlab-ci.yml``` — файл-заготовка для настройки деплоя
+    * ```gulpfile.babel.js``` — настройки Gulp
     * ```.stylelintrc``` — настройки Stylelint
     * ```.stylelintignore``` – запрет на отслеживание файлов Stylelint'ом
-    * ```gulpfile.babel.js``` — настройки Gulp
     * ```webpack.config.js``` — настройки Webpack
     * ```package.json``` — список зависимостей
-    * ```global.json``` — переменные для полноценной работы с nunjucks
 * Папка ```src``` - используется во время разработки:
-    * БЭМ-блоки: ```src/blocks```
     * шрифты: ```src/fonts```
     * изображения: ```src/img```
     * JS-файлы: ```src/js```
     * страницы сайта: ```src/templates/pages```
     * SCSS-файлы: ```src/styles```
-    * Контент HTML-файлов: ```src/templates/pages```
     * Постоянные инклуды: ```src/templates/includes```
     * Главный шаблон страницы: ```src/templates/layout.html```
-    * .htaccess ```src/.htaccess```
-* Папка ```build``` - папка, из которой запускается локальный сервер для разработки (при запуске ```pnpm run dev```)
+    * статические файлы ```src/static```
+* Папка ```build``` - папка, из которой запускается локальный сервер для разработки (при запуске ```npm run dev```)
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 
 ## Команды
-* ```pnpm run lint:style``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
+* ```npm run lint:style``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
 или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
-* ```pnpm run lint:style --fix``` - исправить ошибки в SCSS-файлах
-* ```pnpm run dev``` - запуск сервера для разработки проекта
-* ```pnpm run build``` - собрать проект с оптимизацией без запуска сервера
-* ```pnpm run build views``` - скомпилировать Html файлы
-* ```pnpm run build styles``` - скомпилировать SCSS-файлы
-* ```pnpm run build scripts``` - собрать JS-файлы
-* ```pnpm run build images``` - собрать изображения
-* ```pnpm run build webp``` - сконвертировать изображения в формат ```.webp```
-* ```pnpm run build sprites```- собрать спрайты
-* ```pnpm run build fonts``` - собрать шрифты
-* ```pnpm run build favicons``` - собрать фавиконки
+* ```npm run lint:style --fix``` - исправить ошибки в SCSS-файлах
+* ```npm run dev``` - запуск сервера для разработки проекта
+* ```npm run build``` - собрать проект с оптимизацией без запуска сервера
+* ```npm run build views``` - скомпилировать Html файлы
+* ```npm run build styles``` - скомпилировать SCSS-файлы
+* ```npm run build scripts``` - собрать JS-файлы
+* ```npm run build images``` - собрать изображения
+* ```npm run build webp``` - сконвертировать изображения в формат ```.webp```
+* ```npm run build sprites```- собрать спрайты
+* ```npm run build fonts``` - собрать шрифты
+* ```npm run build favicons``` - собрать фавиконки
 
-## Рекомендации по использованию
-### Компонентный подход к разработке сайтов
-* каждый БЭМ-блок имеет свою папку внутри ```src/blocks/modules```
-* папка одного БЭМ-блока содержит в себе один HTML-файл, один SCSS-файл и один JS-файл (если у блока используется скрипт)
-    * HTML-файл блока импортируется в файл ```src/templates/pages/index.html``` (или в необходимый файл страницы, откуда будет вызываться блок)
-    * SCSS-файл блока импортируется в файл ```src/style/styles.scss```(или в необходимый файл страницы, откуда будет вызываться блок)
-    * JS-файл блока импортируется в ```src/js/index.js``` (или в необходимый файл страницы, откуда будет вызываться блок)
-
-Пример структуры папки с БЭМ-блоком:
-```
-blocks
-├── modules
-│   ├──header
-│   │   ├── header.html
-│   │   ├── header.js
-│   │   ├── header.scss
-```
-Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать команду ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
 
 ### Страницы проекта
 * страницы проекта находятся в папке ```src/templates/pages```
@@ -123,7 +101,7 @@ blocks
 ### Сторонние библиотеки
 * все сторонние библиотеки устанавливаются в папку ```node_modules```
     * для их загрузки воспользуйтеcь командой ```pnpm i package_name```
-    * для подключения JS-файлов библиотек импортируйте их в самом начале JS-файла БЭМ-блока (то есть тот БЭМ-блок, который использует скрипт), например:
+    * для подключения JS-файлов библиотек импортируйте их в самом начале JS-файла , например:
     ```javascript
     import $ from "jquery";
     ```
@@ -136,7 +114,7 @@ blocks
 * в файле ```webpack.config.js``` в точку входа добавить js-файлы страниц, пример:
 ```javascript
 entry: {
-    main: "./src/js/index.js",
+    libs: "./src/js/libs.js",
     pageA: "./src/js/pageA.js",
     pageB: "./src/js/pageB.js"
 }

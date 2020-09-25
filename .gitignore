@@ -3,10 +3,12 @@
 ._*
 .Spotlight-V100
 .Trashes
-.idea
 .vscode
 .github
 .env
+.idea
+.idea/workspace.xml
+.idea/inspectionProfiles/
 ehthumbs.db
 Thumbs.db
 _config.yml
@@ -14,3 +16,4 @@ node_modules
 build
 yarn.lock
 package-lock.json
+pnpm-lock.yaml

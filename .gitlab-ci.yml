@@ -46,9 +46,9 @@ deploy_on_servertest:
     environment:
         name: servertest
     variables:
-        DEPLOY_PATH: /var/www/servertest/data/www/fronttest.servertest.pro/
+        DEPLOY_PATH: /var/www/servertest/data/www/novijgod-html.servertest.pro/
         DEPLOY_USER: servertest
-        SERVERTEST_DOMAIN: fronttest.servertest.pro/
+        SERVERTEST_DOMAIN: novijgod-html.servertest.pro/
         SERVERTEST_USER: servertest
     script:
         - sudo -H -E ~/scripts/deploy/configure_server.sh
