@@ -16,6 +16,7 @@ module.exports = {
 	entry: {
 		libs: "./src/js/libs.js",
 		index: "./src/js/index.js",
+		article: "./src/js/article.js"
 	},
 
 	output: {
