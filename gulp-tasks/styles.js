@@ -35,7 +35,15 @@ let postCssPlugins = [
 gulp.task("styles", () => {
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!production, sourcemaps.init()))
-        .pipe(plumber())
+        .pipe(plumber({
+			errorHandler: function(err) {
+			notify.onError({
+			  title: 'SCSS compilation error',
+			  message: err.message
+			})(err);
+			this.emit('end');
+		  }
+		}))
         .pipe(sass())
         // .pipe(groupmedia())
         .pipe(postcss(postCssPlugins))
