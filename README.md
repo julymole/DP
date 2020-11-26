@@ -26,7 +26,7 @@ webpack-gulp-template
 ├── src
 │   ├── fonts
 │   ├── img
-│   ├── js
+│   ├── scripts
 |   ├── static
 │   ├── styles
 │   └── templates
@@ -114,9 +114,9 @@ webpack-gulp-template
 * в файле ```webpack.config.js``` в точку входа добавить js-файлы страниц, пример:
 ```javascript
 entry: {
-    libs: "./src/js/libs.js",
-    pageA: "./src/js/pageA.js",
-    pageB: "./src/js/pageB.js"
+    libs: "./src/scripts/libs.js",
+    pageA: "./src/scripts/pageA.js",
+    pageB: "./src/scripts/pageB.js"
 }
 ```
 * подключить скомпилированные js-файлы на необходимых страницах

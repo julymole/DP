@@ -1,6 +1,6 @@
 "use strict";
 
-import { paths } from "../gulpfile.babel";
+import {paths} from "../gulpfile.babel";
 import gulp from "gulp";
 import gulpif from "gulp-if";
 import rename from "gulp-rename";
@@ -20,58 +20,58 @@ import postcss from "gulp-postcss";
 
 
 const argv = yargs.argv,
-    production = !!argv.production;
+	production = !!argv.production;
 let postCssPlugins = [
-    atImport(),
-    inlineSVG(),
-    autoprefixer({
-        cascade: false,
-        grid: true
-    }),
-    objectFitImages(),
+	atImport(),
+	inlineSVG(),
+	autoprefixer({
+		cascade: false,
+		grid: true
+	}),
+	objectFitImages(),
 
 ];
 
 gulp.task("styles", () => {
-    return gulp.src(paths.styles.src)
-        .pipe(gulpif(!production, sourcemaps.init()))
-        .pipe(plumber({
-			errorHandler: function(err) {
-			notify.onError({
-			  title: 'SCSS compilation error',
-			  message: err.message
-			})(err);
-			this.emit('end');
-		  }
+	return gulp.src(paths.styles.src)
+		.pipe(gulpif(!production, sourcemaps.init()))
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify.onError({
+					title: 'SCSS compilation error',
+					message: err.message
+				})(err);
+				this.emit('end');
+			}
 		}))
-        .pipe(sass())
-        // .pipe(groupmedia())
-        .pipe(postcss(postCssPlugins))
-        .pipe(gulpif(production, mincss({
-            compatibility: "ie8", level: {
-                1: {
-                    specialComments: 0,
-                    removeEmpty: true,
-                    removeWhitespace: true
-                },
-                2: {
-                    mergeMedia: true,
-                    removeEmpty: true,
-                    removeDuplicateFontRules: true,
-                    removeDuplicateMediaBlocks: true,
-                    removeDuplicateRules: true,
-                    removeUnusedAtRules: false
-                }
-            }
-        })))
-        .pipe(gulpif(production, rename({
-            suffix: ".min"
-        })))
-        .pipe(plumber.stop())
-        .pipe(gulpif(!production, sourcemaps.write("./")))
-        .pipe(gulp.dest(paths.styles.build))
-        .pipe(debug({
-            "title": "CSS files"
-        }))
-        .pipe(browsersync.stream());
+		.pipe(sass())
+		// .pipe(groupmedia())
+		.pipe(postcss(postCssPlugins))
+		.pipe(gulpif(production, mincss({
+			compatibility: "ie8", level: {
+				1: {
+					specialComments: 0,
+					removeEmpty: true,
+					removeWhitespace: true
+				},
+				2: {
+					mergeMedia: true,
+					removeEmpty: true,
+					removeDuplicateFontRules: true,
+					removeDuplicateMediaBlocks: true,
+					removeDuplicateRules: true,
+					removeUnusedAtRules: false
+				}
+			}
+		})))
+		.pipe(gulpif(production, rename({
+			suffix: ".min"
+		})))
+		.pipe(plumber.stop())
+		.pipe(gulpif(!production, sourcemaps.write("./")))
+		.pipe(gulp.dest(paths.styles.build))
+		.pipe(debug({
+			"title": "CSS files"
+		}))
+		.pipe(browsersync.stream());
 });
