@@ -20,6 +20,10 @@ webpackConfig.devtool = production ? false : "source-map";
 gulp.task("scripts", () => {
     return gulp.src(paths.scripts.src)
         .pipe(webpackStream(webpackConfig), webpack)
+        .on('error', function (err) {
+            console.error('WEBPACK ERROR', err);
+            this.emit('end'); // Don't stop the rest of the task
+        })
         .pipe(gulpif(production, rename({
             suffix: ".min"
         })))

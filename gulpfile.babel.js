@@ -21,35 +21,35 @@ const requireDir = require("require-dir"),
             ]
         },
         scripts: {
-            src: "./src/js/index.js",
-            build: "./build/js/",
+            src: "./src/scripts/index.js",
+            build: "./build/scripts/",
             watch: [
-                "./src/js/**/*.js"
+                "./src/scripts/**/*.js"
             ]
         },
         images: {
             src: [
-                "./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}",
-                "!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}"
+                "./src/images/**/*.{jpg,jpeg,png,gif,tiff,svg}",
+                "!./src/images/favicon/*.{jpg,jpeg,png,gif,tiff}"
             ],
-            build: "./build/img/",
-            watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg,tiff}"
+            build: "./build/images/",
+            watch: "./src/images/**/*.{jpg,jpeg,png,gif,svg,tiff}"
         },
         webp: {
             src: [
-                "./src/img/**/*.{jpg,jpeg,png,tiff}",
-                "!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}"
+                "./src/images/**/*.{jpg,jpeg,png,tiff}",
+                "!./src/images/favicon/*.{jpg,jpeg,png,gif,tiff}"
             ],
-            build: "./build/img/",
+            build: "./build/images/",
             watch: [
-                "./src/img/**/*.{jpg,jpeg,png,tiff}",
-                "!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}"
+                "./src/images/**/*.{jpg,jpeg,png,tiff}",
+                "!./src/images/favicon/*.{jpg,jpeg,png,gif,tiff}"
             ]
         },
         sprites: {
-            src: "./src/img/svg/*.svg",
-            build: "./build/img/sprites/",
-            watch: "./src/img/svg/*.svg"
+            src: "./src/images/svg/*.svg",
+            build: "./build/images/sprites/",
+            watch: "./src/images/svg/*.svg"
         },
         fonts: {
             src: "./src/fonts/**/*.{woff,woff2}",
@@ -57,8 +57,8 @@ const requireDir = require("require-dir"),
             watch: "./src/fonts/**/*.{woff,woff2}"
         },
         favicons: {
-            src: "./src/img/favicon/*.{jpg,jpeg,png,gif}",
-            build: "./build/img/favicons/",
+            src: "./src/images/favicon/*.{jpg,jpeg,png,gif}",
+            build: "./build/images/favicons/",
         },
 		static: {
 			src: "./src/static/*.*",
