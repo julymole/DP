@@ -35,16 +35,13 @@ let postCssPlugins = [
 gulp.task("styles", () => {
 	return gulp.src(paths.styles.src)
 		.pipe(gulpif(!production, sourcemaps.init()))
-		.pipe(plumber({
-			errorHandler: function (err) {
-				notify.onError({
-					title: 'SCSS compilation error',
-					message: err.message
-				})(err);
-				this.emit('end');
+		.pipe(sass({
+			style: 'compressed',
+			errLogToConsole: false,
+			onError: function(err) {
+				console.log(notify().write(err));
 			}
 		}))
-		.pipe(sass())
 		// .pipe(groupmedia())
 		.pipe(postcss(postCssPlugins))
 		.pipe(gulpif(production, mincss({
