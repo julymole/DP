@@ -1,5 +1,5 @@
 {
-    "name": "d-event",
+    "name": "webpack-gulp-template",
     "version": "2.0.0",
     "description": "Coffee Gulp Templates",
     "main": "gulpfile.babel.js",
@@ -7,7 +7,7 @@
     "license": "",
     "repository": {
         "type": "git",
-        "url": "http://srv-gitlab.coffeestudio.ru/d-event/d-event-html"
+        "url": "http://srv-gitlab.coffeestudio.ru/dev-front/webpack-gulp-template"
     },
     "scripts": {
         "dev": "gulp",
@@ -42,6 +42,7 @@
         "@babel/core": "^7.10.4",
         "@babel/preset-env": "^7.10.4",
         "@babel/register": "^7.10.4",
+        "autoprefixer": "^9.8.4",
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",
         "browser-sync": "^2.26.7",
@@ -83,9 +84,9 @@
         "stylelint-selector-bem-pattern": "^2.1.0",
         "terser-webpack-plugin": "^3.0.6",
         "webpack": "^4.43.0",
+        "webpack-bundle-analyzer": "^4.4.1",
         "webpack-stream": "^5.2.1",
-        "yargs": "^15.4.0",
-        "autoprefixer": "^9.8.4"
+        "yargs": "^15.4.0"
     },
     "dependencies": {
         "jquery": "^3.5.1",

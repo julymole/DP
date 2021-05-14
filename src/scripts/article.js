@@ -1,6 +1,7 @@
-import $ from "jquery";
 import Swiper from "swiper";
 import 'magnific-popup/dist/jquery.magnific-popup'
+import './libs'
+
 $('.js-mtp-gallery').each(function () {
 	$(this).magnificPopup({
 		delegate: '.js-mtp-gallery-item',
