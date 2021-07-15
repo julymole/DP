@@ -40,9 +40,11 @@
         {% include 'includes/footer.html' %}
 
     </div>
-    <script src="scripts/vendor.js"></script>
-	<script src="scripts/libs.js"></script>
-    {% block scripts %}{% endblock %}
+
+    {% block scripts %}
+		<script src="scripts/libs.js"></script>
+	{% endblock %}
+
     {% include 'includes/counters.html' %}
     </body>
 </html>

@@ -1,1 +1,1 @@
-import $ from "jquery";
+import './init-functions'

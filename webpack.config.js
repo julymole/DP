@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
 	plugins: [
@@ -10,7 +11,9 @@ module.exports = {
 			"window.jquery": "jquery",
 			"$": "jquery",
 			"window.$": "jquery"
-		})
+		}),
+		// Для просмотра структуры бандлов раскомментируйте следующую строку и перейти по ссылке http://localhost:8888/
+		// new BundleAnalyzerPlugin()
 	],
 
 	entry: {
@@ -23,19 +26,6 @@ module.exports = {
 		filename: "[name].js",
 		chunkFilename: "[name].js",
 		publicPath: "/"
-	},
-
-	optimization: {
-		splitChunks: {
-			cacheGroups: {
-				vendor: {
-					test: /node_modules/,
-					chunks: "initial",
-					name: "vendor",
-					enforce: true
-				}
-			}
-		}
 	},
 
 	module: {
