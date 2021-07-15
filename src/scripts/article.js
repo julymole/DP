@@ -18,13 +18,13 @@ $('.js-mtp-gallery').each(function () {
 			preload: [0, 1]
 		},
 		image: {
-			markup: '<div class="mfp-figure">'+
-				'<button type="button" class="mfp-close"></button>'+
-				'<div class="mfp-img"></div>'+
-				'<div class="mfp-bottom-bar">'+
-				'<div class="mfp-title"></div>'+
-				'<div class="mfp-counter"></div>'+
-				'</div>'+
+			markup: '<div class="mfp-figure">' +
+				'<button type="button" class="mfp-close"></button>' +
+				'<div class="mfp-img"></div>' +
+				'<div class="mfp-bottom-bar">' +
+				'<div class="mfp-title"></div>' +
+				'<div class="mfp-counter"></div>' +
+				'</div>' +
 				'</div>',
 
 			// titleSrc: function (item) {
@@ -86,36 +86,38 @@ $(document).ready(function () {
 			})
 
 
-		$('.js-mtp-main-slider .mtp__slider-wrapper').magnificPopup({
-			delegate: '.mtp__slider-slide',
-			type: 'image',
-			gallery: {
-				enabled: true,
-				navigateByImgClick: true,
-				tCounter: '%curr% / %total%',
-				preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-			},
-			callbacks: {
+		$('.js-mtp-main-slider .mtp__slider-wrapper').each(function () {
+			$(this).magnificPopup({
+				delegate: '.mtp__slider-slide',
+				type: 'image',
+				gallery: {
+					enabled: true,
+					navigateByImgClick: true,
+					tCounter: '%curr% / %total%',
+					preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+				},
+				callbacks: {
 
-				elementParse: function(item) {
-					var countItems = $('.js-mtp-main-slider .mtp__slider-slide').length;
-					if(item.el.hasClass("mtp__slider-slide--video")){
-						var dataSrc = item.el.attr('data-mfp-src');
+					elementParse: function (item) {
+						var countItems = $('.js-mtp-main-slider .mtp__slider-slide').length;
+						if (item.el.hasClass("mtp__slider-slide--video")) {
+							var dataSrc = item.el.attr('data-mfp-src');
 
-						var countItem = item.el.index(),
-							countItem = parseInt(countItem + 1);
-						console.log(countItems , countItem);
-						item.type = 'inline';
-						item.src = '<div class="mfp-iframe-scaler"><div class="mfp-iframe-scaler-inner"><button title="Close (Esc)" type="button" class="mfp-close">×</button><iframe class="mfp-iframe" src="'+dataSrc+'?autoplay=1" frameborder="0" allowfullscreen></iframe></div><div class="mfp-counter">'+ countItem  + '/' + countItems + '</div></div>';
+							var countItem = item.el.index(),
+								countItem = parseInt(countItem + 1);
+							console.log(countItems, countItem);
+							item.type = 'inline';
+							item.src = '<div class="mfp-iframe-scaler"><div class="mfp-iframe-scaler-inner"><button title="Close (Esc)" type="button" class="mfp-close">×</button><iframe class="mfp-iframe" src="' + dataSrc + '?autoplay=1" frameborder="0" allowfullscreen></iframe></div><div class="mfp-counter">' + countItem + '/' + countItems + '</div></div>';
 
 
-					}else {
-						item.type = 'image';
+						} else {
+							item.type = 'image';
+						}
 					}
-				}
 
-			},
-		});
+				},
+			});
+		})
 	});
 
 })
