@@ -54,7 +54,6 @@ h2 {
     font-size: map_get($h2, font-size);
     line-height: map_get($h2, line-height);
     letter-spacing: map_get($h2, letter-spacing);
-    font-weight: $font-weight--500;
 }
 h3 {
     font-size: map_get($h3, font-size);

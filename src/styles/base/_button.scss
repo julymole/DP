@@ -1,29 +1,33 @@
 .btn {
-    @include transition();
-    display: inline-block;
-    font-family: $font-family;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 700;
-    text-align: center;
-    padding: 18px;
-    border-radius: 15px;
-    text-decoration: none;
-    &--primary {
-        color: $white-color;
-        background: $theme-primary-color;
-        border: none;
-        &:hover, &:active, &:focus {
-            outline: none;
-            background: $theme-light-color;
-            color: $white-color;
-        }
-    }
+	@include transition();
+	display: inline-block;
+	font-family: $font-family;
+	font-size: 2.5rem;
+	line-height: 1.2;
+	font-weight: 700;
+	text-align: center;
+	padding: 18px;
+	text-decoration: none;
+	border: none;
+	background: transparent;
+
+	&--primary {
+		color: $white-color;
+		background: $theme-primary-color;
+		border-radius: 15px;
+
+		&:hover, &:active, &:focus {
+			outline: none;
+			background: $theme-light-color;
+			color: $white-color;
+		}
+	}
 
 	&--link {
 		color: $function-primary-color;
 		text-transform: uppercase;
 		padding: 0;
+
 		&:hover, &:active, &:focus {
 			outline: none;
 			color: $function-primary-color--hover;
@@ -41,10 +45,80 @@
 			}
 
 			&:hover {
-				.icon{
+				.icon {
 
 					right: 10px;
 				}
+			}
+		}
+	}
+
+}
+
+.burger-btn {
+	//display: none;
+	@media (max-width: $media-l) {
+		display: flex;
+		width: 40px;
+		height: 40px;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		position: relative;
+		z-index: 15;
+	}
+
+	span {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 2px;
+		background-color: $typography-primary-color;
+		@include transition();
+		@media (max-width: $media-m) {
+			width: 24px;
+		}
+
+
+		&:after, &:before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 30px;
+			height: 2px;
+			background-color: $typography-primary-color;
+			@include transition();
+			@media (max-width: $media-m) {
+				width: 24px;
+			}
+		}
+
+		&:before {
+			top: -8px;
+			@media (max-width: $media-m) {
+				top: -6px;
+			}
+		}
+
+		&:after {
+			bottom: -8px;
+			@media (max-width: $media-m) {
+				bottom: -6px;
+			}
+		}
+	}
+
+	&.active {
+		span {
+			transform: rotate(45deg);
+
+			&:after {
+				transform: scale(0);
+			}
+
+			&:before {
+				transform: rotate(-90deg);
+				top: 0;
 			}
 		}
 	}

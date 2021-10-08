@@ -38,7 +38,6 @@ $forms-border-color: rgba(135, 135, 135, 0.4);
 // Базовая типографика
 
 $font-size--root:             8px;
-
 $font-size:                   rem(16); // rem(16px)
 $font-size--small:            80%;
 
@@ -59,12 +58,18 @@ $font-weight--800:            800;
 $font-weight--900:            900;
 
 $font-weight:                 $font-weight--400;
-
 $line-height:                 normal;
 $letter-spacing:              normal;
 
-// Ширины
 
+//Медиа-запросы
+$media-xl: 1340px;
+$media-l: 1024px;
+$media-m: 768px;
+$media-s: 520px;
+
+
+// Ширины
 $h1: (
     'font-size': rem(64),
     'line-height': 1.2,
