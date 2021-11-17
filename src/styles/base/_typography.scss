@@ -9,6 +9,7 @@ p {
 
 a {
     color: $function-link-color;
+	text-decoration: none;
     &:hover, &:focus {
         color: darken($function-link-color, 5%);
     }
@@ -40,7 +41,7 @@ ul {
 //заголовки
 h1, h2, h3, h4, h5, h6 {
     width: 100%;
-    font-weight: $font-weight--700;
+    font-weight: $font-weight--500;
     margin-bottom: 2rem;
     font-family: $font-family;
     margin-top: 0;

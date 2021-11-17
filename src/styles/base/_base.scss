@@ -82,6 +82,7 @@ input[type='text'], input[type='email'], input[type='search'], input[type='passw
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+	background-color: #f7f2ed;
 
     & > .content {
         flex: 1 0 auto;

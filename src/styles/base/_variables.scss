@@ -6,10 +6,10 @@ $typography-text-color: $typography-primary-color;
 $typography-light-white: rgba(255, 255, 255, 0.2);
 
 //функциональный цвета
-$function-primary-color : #e49566;
+$function-primary-color : #27845C;
 $function-primary-color--hover : lighten($function-primary-color, 5%);
 $function-primary-color--active : darken($function-primary-color, 5%);
-$function-secondary-color : #ff6868;
+$function-secondary-color: #FFE7C6;
 $function-link-color : $function-primary-color;
 $function-hover-color: rgba(153, 162, 249, 0.7);
 $function-success-color : #34cd67;
@@ -19,7 +19,7 @@ $function-error-color : #eb5757;
 //цвета темы
 $theme-primary-color: #e49566;
 $theme-light-color: #e7a882;
-$theme-secondary-color: #e7a882;
+$theme-secondary-color: #285A80;
 $theme-gray-color: #fafafa;
 $bg-primary: #202020;
 $bg-secondary: #292929;
@@ -71,33 +71,33 @@ $media-s: 520px;
 
 // Ширины
 $h1: (
-    'font-size': rem(64),
+    'font-size': rem(52),
     'line-height': 1.2,
     'letter-spacing': 0
 );
 $h2: (
-    'font-size': rem(52),
+    'font-size': rem(40),
     'line-height': 1.375,
     'letter-spacing': 0.01em
 );
 
 $h3: (
-    'font-size': rem(48),
+    'font-size': rem(32),
     'line-height': 1.2,
     'letter-spacing': 0
 );
 $h4: (
-    'font-size': rem(40),
+    'font-size': rem(28),
     'line-height': 1.2,
     'letter-spacing': 0
 );
 $h5: (
-    'font-size': rem(32),
+    'font-size': rem(24),
     'line-height': 1.5,
     'letter-spacing': 0
 );
 $h6: (
-    'font-size': rem(28),
+    'font-size': rem(20),
     'line-height': 1.5,
     'letter-spacing': 0
 );

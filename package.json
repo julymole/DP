@@ -1,13 +1,13 @@
 {
     "name": "webpack-gulp-template",
     "version": "2.0.0",
-    "description": "Coffee Gulp Templates",
+    "description": "Gulp Templates",
     "main": "gulpfile.babel.js",
-    "author": "Stas Chumakov (Kosmos)",
+    "author": "",
     "license": "",
     "repository": {
         "type": "git",
-        "url": "http://srv-gitlab.coffeestudio.ru/dev-front/webpack-gulp-template"
+        "url": ""
     },
     "scripts": {
         "dev": "gulp",
@@ -92,6 +92,6 @@
         "jquery": "^3.5.1",
         "js-cookie": "^2.2.1",
         "magnific-popup": "^1.1.0",
-        "swiper": "^5.4.5"
+        "swiper": "^6.8.0"
     }
 }
