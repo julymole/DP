@@ -1,0 +1,146 @@
+{% extends './layout.html' %}
+{% set nameCss= "part" %}
+{% block content %}
+	<main class="part">
+		<section class="part__banner">
+			<a class="logo" href="/"><img src="../images/svg/part-banner.svg" alt="fvff"></a>
+		</section>
+		<div class="part__subtitle wrapper">
+			<h2>Истории 4 собак которым повезло встретить <br> добрых людей и обрести семью.</h2>
+		</div>
+		<div class="video js-video">
+			<img class="video__banner js-video__banner" src="../images/preview-video.jpg"
+				 alt="video-banner">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/zyZAMR56mXY"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen>
+			</iframe>
+			<button type="button" class="btn video__play js-video-play"><span>Смотреть</span></button>
+		</div>
+		<div class="part__title wrapper">
+			<h1>Подопечные проекта – <br> приют Шанс.</h1>
+			<span>город Псков.</span>
+		</div>
+		<div class="part__you-can">
+			<div class="wrapper">
+				<h5>Вы можете</h5>
+				<ul>
+					<li><span>Вы можете</span> подарить собаке семью,взяв её домой.</li>
+					<li><span>Вы можете</span> стать патроном и ежемесечно переводить небольшую сумму на содержание
+						конкретной собаки.
+					</li>
+					<li><span>Вы можете</span> просто приехать в выходной и погулять с собакой за территорией приюта.
+					</li>
+					<li><span>Вы можете</span> привезти в приют корм,миски,матрасы.</li>
+					<li><span>Вы можете</span> стать волонтером приюта.</li>
+					<li><span>Вы можете</span> сделать добро.</li>
+				</ul>
+			</div>
+		</div>
+
+		<section class="part__slider wrapper js-part-slider">
+			<div class="swiper-container swiper-container">
+				<div class="swiper-wrapper swiper__wrapper js-swiper-wrapper">
+					<div class="swiper-slide part-swiper-slide js-swiper-slide">
+						<picture>
+							<source type="image/webp" srcset="/images/slide.webp">
+							<img class="swiper-lazy" data-src="/images/slide.jpg" alt="fvff" width="412">
+						</picture>
+						<div class="swiper-lazy-preloader"></div>
+					</div>
+					<div class="swiper-slide part-swiper-slide js-swiper-slide">
+						<picture>
+							<source type="image/webp" srcset="/images/slide-2.webp">
+							<img class="swiper-lazy" data-src="/images/slide-2.jpg" alt="fvff" width="412">
+						</picture>
+						<div class="swiper-lazy-preloader"></div>
+					</div>
+					<div class="swiper-slide part-swiper-slide js-swiper-slide">
+						<picture>
+							<source type="image/webp" srcset="/images/slide-3.webp">
+							<img class="swiper-lazy" data-src="/images/slide-3.jpg" alt="fvff" width="412">
+						</picture>
+						<div class="swiper-lazy-preloader"></div>
+					</div>
+					<div class="swiper-slide part-swiper-slide js-swiper-slide">
+						<picture>
+							<source type="image/webp" srcset="/images/slide-4.webp">
+							<img class="swiper-lazy" data-src="/images/slide-4.jpg" alt="fvff" width="412">
+						</picture>
+						<div class="swiper-lazy-preloader"></div>
+					</div>
+				</div>
+				<div class="part-swiper-pagination swiper-pagination">
+				</div>
+				<button class="btn swiper-button swiper-button-prev js-part-slider__btn--prev" aria-label="prev slide">
+					{% include 'includes/svg/slider-arrow.svg' %}
+				</button>
+				<button class="btn swiper-button swiper-button-next js-part-slider__btn--next" aria-label="next slide">
+					{% include 'includes/svg/slider-arrow.svg' %}
+				</button>
+			</div>
+		</section>
+		<div class="part__contacts">
+			<div class="wrapper">
+				<div class="part__contacts-item">
+					<p>фотограф Юлия Панова</p>
+					<span>Контактные данные приюта:</span>
+
+					<a href="">Адрес/ ссылка на группу в контакте и инстаграм.</a>
+				</div>
+				<div class="part__contacts-item">
+					<p>QR приюта для денежных переводов</p>
+
+					<picture>
+						<source type="image/webp" srcset="/images/qr.webp">
+						<img src="/images/qr.jpg" alt="fvff" width="206"
+							 height="206">
+					</picture>
+				</div>
+
+			</div>
+		</div>
+		<div class="about-us__contacts">
+			<div class="wrapper">
+				<a href="/main.html" class="logo">
+					{% include 'includes/svg/logo-black.svg' %}
+				</a>
+				<a class="link" href="tel:+79000000000">
+					<span>+7 900 000 00 00</span>{% include 'includes/svg/phone.svg' %}</a>
+				<a class="link" href=""><span>Instagram</span>{% include 'includes/svg/instagram.svg' %}</a>
+			</div>
+		</div>
+
+	<section class="main__links">
+			<div class="wrapper">
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+{% endblock %}
+<!--подключение скриптов-->
+{% block scripts %}
+	<script src="scripts/part.js"></script>
+{% endblock %}

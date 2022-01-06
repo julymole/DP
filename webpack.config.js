@@ -19,7 +19,7 @@ module.exports = {
 	entry: {
 		libs: "./src/scripts/libs.js",
 		index: "./src/scripts/index.js",
-		article: "./src/scripts/article.js"
+		part: "./src/scripts/part.js"
 	},
 
 	output: {

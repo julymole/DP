@@ -1,40 +1,36 @@
-import './libs'
-import {Swiper, Navigation, Pagination, Autoplay, EffectCube, EffectFade} from "swiper";
+import './libs';
+import {body, press} from './init-functions';
 
-Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
-
-function initMainSlider() {
-
-	let photoSlider = $('.js-main-slider');
-	if (photoSlider.find('.js-swiper-slide').length > 0) {
-		new Swiper('.js-main-slider .swiper-container', {
-			slidesPerView: 1,
-			loop: true,
-			autoplay: {
-				delay: 4000,
-			},
-			/*effect: 'cube',
-			cubeEffect: {
-				slideShadows: false,
-			},*/
-			effect: 'fade',
-			fadeEffect: {
-				crossFade: false
-			},
-
-			pagination: {
-				el: '.main-swiper-pagination',
-				type: 'bullets',
-				dynamicBullets: true,
-			},
-
-			navigation: {
-				prevEl: '.js-main-slider__btn--prev',
-				nextEl: '.js-main-slider__btn--next'
-			}
-
+let goAboutUs = () => {
+	let btnGo = document.querySelector('.js-go-to-about'),
+		content = document.querySelector('.js-about-us'),
+		linksBlock = document.querySelector('.js-main__links');
+	if (btnGo) {
+		btnGo.addEventListener(press, () => {
+			content.classList.add('active');
+			linksBlock.classList.add('dark')
 		});
 	}
 }
 
-initMainSlider();
+let goPrev = () => {
+	let btnPrev = document.querySelector('.js-arrow'),
+		content = document.querySelector('.js-about-us'),
+		linksBlock = document.querySelector('.js-main__links');
+	if (btnPrev) {
+		btnPrev.addEventListener(press, () => {
+			content.classList.remove('active');
+			linksBlock.classList.remove('dark');
+		});
+	}
+}
+document.addEventListener('DOMContentLoaded', () => {
+	goAboutUs();
+	goPrev();
+});
+
+
+body.on(press, '.js-dropdown-btn', function () {
+	$('.js-dropdown-content').stop().slideToggle(300);
+	$(this).toggleClass('active');
+});

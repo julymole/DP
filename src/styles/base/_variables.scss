@@ -1,12 +1,12 @@
 $white-color: #ffffff;
 //цвета текста
-$typography-primary-color: #333333;
+$typography-primary-color: #000000;
 $typography-secondary-color:  #adadad;
 $typography-text-color: $typography-primary-color;
 $typography-light-white: rgba(255, 255, 255, 0.2);
 
 //функциональный цвета
-$function-primary-color : #27845C;
+$function-primary-color : #000000;
 $function-primary-color--hover : lighten($function-primary-color, 5%);
 $function-primary-color--active : darken($function-primary-color, 5%);
 $function-secondary-color: #FFE7C6;
@@ -43,7 +43,7 @@ $font-size--small:            80%;
 
 $font-path:                   '../fonts';
 
-$font-family:                'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family:                'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 $font-family--monospace:      SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 $font-family--icon:           'icomoon';
 

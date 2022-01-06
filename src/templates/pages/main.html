@@ -1,11 +1,89 @@
 {% extends './layout.html' %}
 {% set nameCss= "main" %}
 {% block content %}
-	<main>
-	{% include 'includes/main/main-slider.html' %}
-		<div class="wrapper">
+	<main class="main">
 
-		</div>
+		<section class="main__banner">
+			<a class="logo" href="/"><img src="../images/svg/logo.svg" alt="fvff"></a>
+		</section>
+		<section class="main__link-about js-go-to-about">
+			<div class="wrapper">
+				<h2>Творческая мастерская <br>социальных инициатив </h2>
+				<button class="btn" type="button">О нас {% include 'includes/svg/arrow-right.svg' %}</button>
+			</div>
+		</section>
+		<section class="main__links js-main__links">
+			<div class="wrapper">
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+				<div class="main__links-item">
+					<span class="title">Часть первая</span>
+					<a class="link" href="">Одри.Хомба.Вилли.Вонг.</a>
+					<div class="btn">Смотреть</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="about-us js-about-us">
+			<div class="wrapper">
+				<div class="about-us__header">
+					<h2>Благотворительный <br> ВидеоАртПроект</h2>
+					<div class="desc">Показ цикла видеоработ, посвященных актуальным социальным вопросам, фотовыставки и
+						благотворительные акции для оказания адресной помощи подопечным проекта.<br>
+						Художники,актеры,музыканты,хореографы,режиссёры и видеографы объединились,чтобы с помощью своего
+						творчества помочь тем,кто в этом нуждается и напомнить всем о силе добра.
+					</div>
+				</div>
+				<div class="about-us__content">
+					<div class="about-us__title js-dropdown-btn">
+						<h5>Творческая группа Доброго Проекта</h5> {% include 'includes/svg/arrow-small.svg' %}</div>
+
+					<ul class="about-us__list js-dropdown-content">
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Фотограф</span><span>Юлия Панова</span></li>
+						<li class="item"><span>Композитор</span><span>Павел Виноградов</span></li>
+						<li class="item"><span>Медиа-художник</span><span>Роман Пугач</span></li>
+						<li class="item"><span>Графический дизайн</span><span>Криста Vanaga-Ширяева</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+						<li class="item"><span>Оператор/ Монтаж</span><span>Алексей Ефремов</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="about-us__contacts">
+				<div class="wrapper">
+					<div class="arrow js-arrow"><span></span></div>
+					<a href="/main.html" class="logo">
+						{% include 'includes/svg/logo.svg' %}
+					</a>
+					<a class="link" href="tel:+79000000000"> <span>+7 900 000 00 00</span>{% include 'includes/svg/phone.svg' %}</a>
+					<a class="link" href=""><span>Instagram</span>{% include 'includes/svg/instagram.svg' %}</a>
+				</div>
+			</div>
+
+		</section>
+
 	</main>
 
 {% endblock %}
